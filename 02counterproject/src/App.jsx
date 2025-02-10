@@ -6,6 +6,11 @@ function App() {
   let addValue = () => {
     
     setCounter(counter+1)
+    setCounter(preCounter => preCounter+1)
+    setCounter(preCounter => preCounter+1)
+    setCounter(preCounter => preCounter+1)
+
+
     if(counter==20){
       setCounter(20)
       console.log("value not increases");
