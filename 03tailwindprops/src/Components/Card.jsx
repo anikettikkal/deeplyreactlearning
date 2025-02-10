@@ -1,7 +1,7 @@
 import React from "react"
 
 
-function Card({username}) {
+function Card({username, para}) {
     console.log(username);
     
     return (
@@ -19,8 +19,7 @@ function Card({username}) {
                     <h2 className="text-xl font-semibold tracking-wide">{username}</h2>
                 </div>
                 <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio tempora ipsum soluta
-                    amet
+                    {para}
                 </p>
             </div>
         </>
