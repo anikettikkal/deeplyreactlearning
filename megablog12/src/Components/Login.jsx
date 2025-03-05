@@ -55,6 +55,38 @@ function Login() {
                     </Link>
                 </p>
                 {error && <p className="text-red-500 mt-8 text-center">{error}</p>}
+                <form className="mt-8" onSubmit={handleSubmit(login)}>
+                    <div className="space-y-5">
+                        <Input
+                        label="Email:"
+                        placeholder="Enter Your Email"
+                        type="email"
+                        {...register("email", {
+                            required: true,
+                            validate:{
+                                matchPatern:(value)=>{
+                                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) ||
+                                    "Email address must be a valid address"
+                                }
+                            }
+                        })}
+                         />
+
+                         <Input
+                         label="password"
+                         placeholder="Enter Password"
+                         type="password"
+                         {...register("password",{
+                            required:true,
+                         })}
+                          />
+
+                         <Button
+                         type="submit"
+                         className="w-full"
+                         >Sign in</Button> 
+                    </div>
+                </form>
 
             </div>
         </div>
